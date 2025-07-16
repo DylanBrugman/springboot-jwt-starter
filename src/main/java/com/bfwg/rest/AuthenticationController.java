@@ -102,7 +102,7 @@ public class AuthenticationController {
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<?> changePassword(@RequestBody PasswordChanger passwordChanger) {
 		userService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
-		Map<String, String> result = new HashMap<>();
+		Map<String, String> result = new HashMap<String, String>();
 		result.put("result", "success");
 		return ResponseEntity.accepted().body(result);
 	}
